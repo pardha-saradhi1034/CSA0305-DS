@@ -1,0 +1,41 @@
+#include <stdio.h>
+#define MAX 100
+
+int stack1[MAX], stack2[MAX];
+int top1 = -1, top2 = -1;
+
+void push1(int x) { stack1[++top1] = x; }
+void push2(int x) { stack2[++top2] = x; }
+
+int main() {
+    int n1, n2;
+    printf("Enter size of stack1: ");
+    scanf("%d", &n1);
+    printf("Enter elements: ");
+    for (int i = 0; i < n1; i++) {
+        int x; scanf("%d", &x);
+        push1(x);
+    }
+
+    printf("Enter size of stack2: ");
+    scanf("%d", &n2);
+    printf("Enter elements: ");
+    for (int i = 0; i < n2; i++) {
+        int x; scanf("%d", &x);
+        push2(x);
+    }
+
+    if (n1 > 0 && n2 > 0) {
+        int bottom1 = stack1[0];       // bottom of stack1
+        int top1Val = stack1[top1];    // top of stack1
+        int bottom2 = stack2[0];       // bottom of stack2
+        int top2Val = stack2[top2];    // top of stack2
+
+        int sum = bottom1 + top1Val + bottom2 + top2Val;
+        printf("Sum of bottom & top elements from both stacks = %d\n", sum);
+    } else {
+        printf("One of the stacks is empty!\n");
+    }
+
+    return 0;
+}
