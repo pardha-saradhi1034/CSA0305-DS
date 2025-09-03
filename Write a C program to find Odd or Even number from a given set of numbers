@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+
+    // Input size of set
+    printf("Enter how many numbers: ");
+    scanf("%d", &n);
+
+    int arr[n];
+
+    // Input numbers
+    printf("Enter %d numbers:\n", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Check odd or even
+    printf("\nResult:\n");
+    for (int i = 0; i < n; i++) {
+        if (arr[i] % 2 == 0)
+            printf("%d is Even\n", arr[i]);
+        else
+            printf("%d is Odd\n", arr[i]);
+    }
+
+    return 0;
+}
